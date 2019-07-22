@@ -25,6 +25,7 @@ Things you may want to cover:
 
 
 (로그인 상태확인)
+
 <% if user_signed_in? %>
 <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
 <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>

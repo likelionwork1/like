@@ -5,7 +5,7 @@ class HeartsController < ApplicationController
         if heart.nil?
             Heart.create(user_id: current_user.id, post_id: params[:id])
         else
-            Heart.destroy
+            heart.destroy
         end
         
         redirect_to request.referrer

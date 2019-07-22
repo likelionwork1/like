@@ -13,5 +13,10 @@
 <hr>
 <% @posts.each do |p| %>
     [게시글 제목] <%= p.title %>
+    <%= link_to "좋아요! #{p.hearts.size}", hearts_path(p.id) %>
+    &nbsp; 
+    <% p.hearts.each do |h| %>
+        | <%= @users.find(h.user_id).email %>
+    <% end %>
     <br>
 <% end %>

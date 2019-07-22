@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_175422) do
+ActiveRecord::Schema.define(version: 2019_07_22_180808) do
+
+  create_table "hearts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_hearts_on_post_id"
+    t.index ["user_id"], name: "index_hearts_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
